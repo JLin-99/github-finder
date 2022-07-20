@@ -9,6 +9,7 @@ class UI {
         <div class="row">
           <div class="col-md-3">
             <img class="img-fluid mb-2 rounded mx-auto d-block" src="${user.avatar_url}">
+            <h4 class="text-center">${user.login}</h4>
             <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block mb-3">View Profile</a>
           </div>
           <div class="col-md-9">
@@ -18,6 +19,7 @@ class UI {
             <span class="badge badge-info">Following: ${user.following}</span>
             <br><br>
             <ul class="list-group">
+              <li class="list-group-item">Name: ${user.name}</li>
               <li class="list-group-item">Company: ${user.company}</li>
               <li class="list-group-item">Website/Blog: ${user.blog}</li>
               <li class="list-group-item">Location: ${user.location}</li>
@@ -29,5 +31,9 @@ class UI {
       <h3 class="page-heading mb-3">Latest Repos</h3>
       <div id="repos"></div>
     `;
+  }
+
+  clearProfile() {
+    this.profile.innerHTML = "";
   }
 }

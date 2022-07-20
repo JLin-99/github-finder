@@ -8,6 +8,7 @@ searchForm.addEventListener("submit", (e) => {
   // Get input text
   const username = e.target[0].value;
   if (!username || /^\s*$/.test(username)) {
+    ui.clearProfile();
     e.target[0].value = "";
     return;
   }
@@ -21,6 +22,5 @@ searchForm.addEventListener("submit", (e) => {
         ui.showProfile(data.profile);
       }
     })
-
   e.target[0].value = "";
 })
