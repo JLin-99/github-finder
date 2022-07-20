@@ -1,4 +1,5 @@
 const github = new GitHub,
+  ui = new UI,
   searchForm = document.getElementById("search-form");
 
 // Search input event listener
@@ -14,11 +15,10 @@ searchForm.addEventListener("submit", (e) => {
   // Make HTTP call
   github.getUser(username)
     .then(data => {
-      console.log(data)
       if (data.profile.message === "Not Found") {
         console.log(`User: ${username} Not Found`)
       } else {
-        console.log(`User: ${username} Found`)
+        ui.showProfile(data.profile);
       }
     })
 
